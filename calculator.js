@@ -17,3 +17,6 @@ const alarmTimeCalculator = () => {
 const sleepDebtCalculator = () => {
 
 }
+
+// Test for if the Document Object Model is functioning and my files are linked correctly
+document.getElementById('test').innerHTML = 'hello';
