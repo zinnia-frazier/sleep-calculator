@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Sleep Calculator</title>
         <link href="main.css" rel="stylesheet">
     </head>
 
     <body>
         <h1>Sleep Calculator</h1>
-        <form>
-            <input type="number" id="sleepTime">
-            <input type="number" id="wakeTime">
-            <submit>Submit</submit>
-        </form>
+
+        <h2>When Should I go to Sleep?</h2>
+        
+            <input type="number" id="desiredWakeUpTime" />
+            <button onclick="whenGoToSleep()">Calculate my Bed Time</button>
+        
+
+        <h3 id="sleepTimeResult">Your Bed Time</h3>
+
+        <hr>
+
+        <h2>When Should I go to Sleep</h2>
+
+        <label for="sleepTimeSelect">Desired wake up time?</label>
+
+        <select id="sleepTimeSelect" name="bedTimecalculator">
+            <option value="1">1 A.M.</option>
+            <option value="2">2 A.M.</option>
+            <option value="3">3 A.M.</option>
+            <option value="4">4 A.M.</option>
+            <option value="5">5 A.M.</option>
+            <option value="6">6 A.M.</option>
+            <option value="7">7 A.M.</option>
+            <option value="8">8 A.M.</option>
+            <option value="9">9 A.M.</option>
+            <option value="10">10 A.M.</option>
+            <option value="11">11 A.M.</option>
+            <option value="12">12 P.M.</option>
+        </select>
+
+        <button onclick="bedTimeCalculator()">Calculate my Bed Time</button>
+
+        <h3 id="sleepTimeAnswer">Your Bed Time</h3>
+
+        <hr>
+
+        <h2>When Should I set my Alarm?</h2>
+        
+            <input type="number" id="desiredSleepTime" />
+            <input type="submit" value="Calculate my Wake Up Time" />
+        
+
+        <h3 id="wakeUpTimeResult">Your Wake Up Time</h3>
+            
+        <hr>
 
         <h3 id="bedtime"></h3>
 
