@@ -7,25 +7,24 @@ export default function Bedtime() {
 
     const [bedtime, setBedtime] = useState();
     const [wakeTime, setWakeTime] = useState();
-    const [clockSign, setClockSign] = useState('P.M.');
+    const [clockSign, setClockSign] = useState(' P.M.');
+    const [userNumber, setUserNumber] = useState();
 
     // Handle Change
-    function handleChange(event) {
+    function handleSubmit(event) {
         setWakeTime(event.target.value);
+        event.preventDefault();
     }
         
     // Sleep Calculator
     function sleepCalculator() {
 
-        
-
-        setWakeTime(document.getElementById('desiredWakeUpTime').value);
-        let userNumber = parseFloat(wakeTime);
-
+        setWakeTime(document.getElementById('desiredWakeUpTime'));
+        setUserNumber(parseFloat(wakeTime));
         
 
         if (userNumber < 1) {
-            userNumber = userNumber + 12;
+            setUserNumber(userNumber + 12);
             setClockSign(' P.M.');
         } else {
             setClockSign(' A.M.');
@@ -49,10 +48,10 @@ export default function Bedtime() {
 
             <h2>When Should I go to Sleep</h2>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <label for="sleepTimeSelect">Desired wake up time?</label>
 
-                <select id="sleepTimeSelect" name="bedTimecalculator" onChange={handleChange}>
+                <select id="sleepTimeSelect" name="bedTimecalculator">
                     <option value="1">1 A.M.</option>
                     <option value="2">2 A.M.</option>
                     <option value="3">3 A.M.</option>
@@ -67,9 +66,7 @@ export default function Bedtime() {
                     <option value="12">12 P.M.</option>
                 </select>
 
-                <input type='number' />
-
-                <button onClick={sleepCalculator}>Calculate my Bed Time</button>  
+                <button type='submit' onClick={sleepCalculator}>Calculate my Bed Time</button>
             </form>
             
 
