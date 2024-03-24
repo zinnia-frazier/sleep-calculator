@@ -5,37 +5,38 @@ import React, { useState } from 'react';
 // Export component
 export default function Bedtime() {
 
-    const [bedtime, setBedtime] = useState();
-    const [wakeTime, setWakeTime] = useState();
+    const [bedtime, setBedtime] = useState('');
+    const [wakeTime, setWakeTime] = useState('');
     const [clockSign, setClockSign] = useState(' P.M.');
-    const [userNumber, setUserNumber] = useState();
+    const [userNumber, setUserNumber] = useState('');
 
     // Handle Change
-    function handleSubmit(event) {
+    function handleChange(event) {
         setWakeTime(event.target.value);
+    }
+    
+    // Handle Submit
+    function handleSubmit(event) {
         event.preventDefault();
+        setWakeTime(parseFloat(event.target.value));
     }
         
     // Sleep Calculator
-    function sleepCalculator() {
+    function sleepCalculator(wakeTime) {        
 
-        setWakeTime(document.getElementById('desiredWakeUpTime'));
-        setUserNumber(parseFloat(wakeTime));
-        
-
-        if (userNumber < 1) {
-            setUserNumber(userNumber + 12);
+        if (wakeTime < 1) {
+            setUserNumber(wakeTime + 12);
             setClockSign(' P.M.');
         } else {
             setClockSign(' A.M.');
         }
 
-        if (userNumber === 12) {
+        if (wakeTime === 12) {
             setClockSign(' A.M.');
         }
 
-        if (!isNaN(userNumber)) {
-            setBedtime('Go to bed by ' + userNumber - 8 + clockSign);
+        if (!isNaN(wakeTime)) {
+            setBedtime('Go to bed by ' + wakeTime - 8 + clockSign);
 
         } else {
             setBedtime('Please enter a valid number.')
@@ -66,11 +67,17 @@ export default function Bedtime() {
                     <option value="12">12 P.M.</option>
                 </select>
 
+                <input type='number' value={wakeTime} onChange={handleChange} />
+
                 <button type='submit' onClick={sleepCalculator}>Calculate my Bed Time</button>
             </form>
             
 
             <h3>{bedtime}</h3>
+
+            <p>{wakeTime}</p>
+
+            <p>{userNumber}</p>
         </main>
     )
 }
