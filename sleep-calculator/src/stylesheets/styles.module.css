@@ -24,7 +24,7 @@ p, input, select {
 }
 
 .gradient {
-    background: linear-gradient(to right, hsla(10, 90%, 25%, 1), hsla(180, 90%, 25%, 1));
+    background: linear-gradient(to right, hsla(250, 90%, 25%, 1), hsla(300, 90%, 25%, 1));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
