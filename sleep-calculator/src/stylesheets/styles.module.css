@@ -42,6 +42,12 @@ p, input, select {
     box-shadow: 0.5rem 0.5rem black;
     
     background-color: hsla(150, 50%, 90%, 1);
+
+}
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
 }
 
 
