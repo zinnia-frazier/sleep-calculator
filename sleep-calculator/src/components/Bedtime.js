@@ -1,6 +1,8 @@
 // Import React
 import React, { useState } from 'react';
 
+// Import Styles
+import style from '../stylesheets/styles.module.css';
 
 // Export component
 export default function Bedtime() {
@@ -43,37 +45,43 @@ export default function Bedtime() {
 
     return (
         <main>
-            <h1>Sleep Calculator</h1>
-
-            <h2>When Should I go to Sleep</h2>
-
-            <form>
-              <label for="sleepTimeSelect">Desired wake up time?</label>
-
-                <select onChange={handleChange} id="sleepTimeSelect" name="bedTimecalculator">
-                    <option value="1">1 A.M.</option>
-                    <option value="2">2 A.M.</option>
-                    <option value="3">3 A.M.</option>
-                    <option value="4">4 A.M.</option>
-                    <option value="5">5 A.M.</option>
-                    <option value="6">6 A.M.</option>
-                    <option value="7">7 A.M.</option>
-                    <option value="8">8 A.M.</option>
-                    <option value="9">9 A.M.</option>
-                    <option value="10">10 A.M.</option>
-                    <option value="11">11 A.M.</option>
-                    <option value="12">12 P.M.</option>
-                </select>
-
-            </form>
+            <div className={style.container}>
+                <h1 className={style.gradient}>Sleep Calculator</h1>
+            </div>
+            
+            <div className={style.container}>
+                <h2>When Should I go to Sleep</h2>
+            </div>
             
 
-            <h3>{bedtimeStatement}</h3>
+            <div className={style.container}>
+                <form>
+                    <label for="sleepTimeSelect">Desired wake up time?</label>
 
-            <p>Wake Time {wakeTime}</p>
+                    <select onChange={handleChange} id="sleepTimeSelect" name="bedTimecalculator">
+                        <option value="1">1 A.M.</option>
+                        <option value="2">2 A.M.</option>
+                        <option value="3">3 A.M.</option>
+                        <option value="4">4 A.M.</option>
+                        <option value="5">5 A.M.</option>
+                        <option value="6">6 A.M.</option>
+                        <option value="7">7 A.M.</option>
+                        <option value="8">8 A.M.</option>
+                        <option value="9">9 A.M.</option>
+                        <option value="10">10 A.M.</option>
+                        <option value="11">11 A.M.</option>
+                        <option value="12">12 P.M.</option>
+                    </select>
 
-            <p>Bed Time {bedtime}</p>
+                </form>  
+            </div>
 
+            <div className={style.container}>
+
+                <h3>{bedtimeStatement}</h3>
+
+            </div>
+            
         </main>
     )
 }

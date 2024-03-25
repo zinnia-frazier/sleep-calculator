@@ -1,0 +1,65 @@
+/* Global
+================================================ */
+html {
+    font-size: 16px;
+    background-color: hsla(300, 50%, 90%, 1);
+}
+
+/* Typography
+================================================ */
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p, input, select {
+    font-size: 1rem;
+}
+
+.gradient {
+    background: linear-gradient(to right, hsla(10, 90%, 25%, 1), hsla(180, 90%, 25%, 1));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Structure
+================================================ */
+.container {
+    display: flex;
+    justify-content: center;
+
+    margin: 1rem;
+
+    border: 0.25rem solid black;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem black;
+    
+    background-color: hsla(150, 50%, 90%, 1);
+}
+
+
+
+/* HTML Components
+================================================ */
+form {
+    padding: 2rem;
+    margin: 2rem;
+
+}
+
+select {
+    margin: 1rem;
+    padding: 0.25rem;
+    border: 0.125rem solid black;
+    border-radius: 0.5rem;
+}
+
+/* React Components
+================================================ */
